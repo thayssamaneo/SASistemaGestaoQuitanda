@@ -50,9 +50,11 @@ body {
     background-color: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 
-    animation: fadeIn 0.8s ease-out;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+        box-shadow 0.4s ease;
+    will-change: transform;
 }
 
 .section-margin {
@@ -163,6 +165,11 @@ button:active {
     flex: 1;
     min-width: 250px;
     animation: fadeIn 1s ease-out;
+}
+
+.container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
 }
 
 #estoque p,
