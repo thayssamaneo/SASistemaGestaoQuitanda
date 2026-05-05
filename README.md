@@ -5,7 +5,7 @@
 **Padrão Internacional:** ISO/IEC/IEEE 29148:2018
 **Versão:** 1.0.0
 **Data:** 2026-04-14
-**Autor:** DiogoTB
+**Autor:** Thayssa Maneo
 
 ---
 
@@ -194,7 +194,7 @@ O Sistema deve:
 [] Atualização do Estoque
 [] Saída: Notificação para o usuário sobre a venda
 
-#### RF-04: Histórico de movimentações
+#### RF-05: Histórico de movimentações
 
 **Descrição:** Permitir o Registro de Movimentações (Entrada de Saída) de Produtos.
 - Prioridade: Média
