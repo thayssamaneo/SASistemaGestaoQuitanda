@@ -1,6 +1,45 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shake {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    75% {
+        transform: translateX(5px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #dddddd;
+    background-color: #dadcdf;
     margin: 0;
     padding: 40px 20px;
 }
@@ -11,22 +50,39 @@ body {
     background-color: white;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    animation: fadeIn 0.8s ease-out;
 }
 
 .section-margin {
     margin-top: 30px;
 }
 
-h1, h2 {
+h1,
+h2 {
     color: #333;
     margin-bottom: 20px;
 }
 
-h1 { text-align: center; font-size: 24px; }
-h2 { font-size: 20px; border-left: 5px solid dodgerblue; padding-left: 15px; }
+h1 {
+    text-align: center;
+    font-size: 28px;
+    letter-spacing: -1px;
+}
 
-/* FLEX E ALINHAMENTO */
+h2 {
+    font-size: 20px;
+    border-left: 5px solid dodgerblue;
+    padding-left: 15px;
+    transition: all 0.3s;
+}
+
+h2:hover {
+    padding-left: 25px;
+    color: dodgerblue;
+}
+
 .form-area {
     display: flex;
     flex-direction: column;
@@ -55,11 +111,13 @@ input {
     border-radius: 6px;
     border: 1px solid #ddd;
     outline: none;
-    transition: border 0.3s;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input:focus {
     border-color: dodgerblue;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.3);
+    transform: translateY(-2px);
 }
 
 button {
@@ -70,15 +128,19 @@ button {
     color: white;
     border-radius: 6px;
     font-weight: bold;
-    transition: background 0.3s, transform 0.1s;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
 }
 
 button:hover {
     background: #1a73e8;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(26, 115, 232, 0.4);
 }
 
 button:active {
-    transform: scale(0.98);
+    transform: scale(0.95);
 }
 
 .btn-secondary {
@@ -87,9 +149,9 @@ button:active {
 
 .btn-secondary:hover {
     background: #5a6268;
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
 }
 
-/* LAYOUT PARA CONSULTAS */
 .linhas {
     display: flex;
     justify-content: space-between;
@@ -100,9 +162,36 @@ button:active {
 .action-group {
     flex: 1;
     min-width: 250px;
+    animation: fadeIn 1s ease-out;
 }
 
-#mensagem {
-    color: #ff4444;
+#estoque p,
+#movimentacoes p {
+    background: #f8f9fa;
+    padding: 10px;
+    border-radius: 4px;
+    border-left: 3px solid #ddd;
+    animation: fadeIn 0.5s ease-in;
+    transition: transform 0.2s;
+}
+
+#estoque p:hover {
+    transform: scale(1.01);
+    background: #eef6ff;
+    border-left-color: dodgerblue;
+}
+
+#mensagens {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    text-align: center;
     font-weight: bold;
+    min-height: 20px;
+}
+
+#mensagens:not(:empty) {
+    animation: pulse 0.4s ease-in-out;
+    background-color: #fff3f3;
+    color: #ff4444;
 }
