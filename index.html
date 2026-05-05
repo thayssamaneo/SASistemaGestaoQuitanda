@@ -1,48 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Quitanda MVC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <h1>Quitanda MVC</h1>
 
   <!-- Formulário para cadastrar produto -->
-  <h2>Cadastrar Produto</h2>
-  <input id="id" placeholder="ID">
-  <input id="nome" placeholder="Nome">
-  <input id="categoria" placeholder="Categoria">
-  <input id="preco" placeholder="Preço">
-  <input id="quantidade" placeholder="Quantidade">
-  <button id="btnCadastrar">Cadastrar Produto</button>
+  <div class="container">
+    <h2>Cadastrar Produto</h2>
+    <h1>Adicione os campos requisitados e confirme a adição do produto</h1>
+    <div class="form-area">
+        <div class="form-area-align">
+            <input type="text" id="nome" placeholder="Nome do produto">
+            <input type="text" id="categoria" placeholder="Categoria">
+            <input type="number" id="preco" placeholder="Preço unitário">
+            <input type="number" id="quantidade" placeholder="Quantidade em estoque">
+        </div>
+        <div class="insersao_de_dados">
+            <button id="btnCadastrar">Cadastrar</button>
+        </div>
+    </div>
+  </div>
 
-  <!-- Botão para listar estoque -->
-  <h2>Estoque</h2>
-  <div id="estoque"></div>
-  <button id="btnListarEstoque">Listar Estoque</button>
 
-  <!-- Botão para listar movimentações -->
-  <h2>Movimentações</h2>
-  <div id="movimentacoes"></div>
-  <button id="btnListarMov">Listar Movimentações</button>
-
-  <!-- Área de mensagens -->
-  <div id="mensagens"></div>
-
-  <!-- Formulário para registrar venda -->
-    <h2>Registrar Venda</h2>
-    <input id="nomeVenda" placeholder="Nome do Produto">
-    <input id="quantidadeVenda" placeholder="Quantidade">
-    <button id="btnVenda">Registrar Venda</button>
-
-    <!-- Formulário para atualizar produto -->
+  <div class="container section-margin">
     <h2>Atualizar Produto</h2>
-    <input id="nomeUpdate" placeholder="Nome do Produto">
-    <input id="quantidadeUpdate" placeholder="Nova Quantidade">
-    <input id="precoUpdate" placeholder="Novo Preço">
-    <button id="btnUpdate">Atualizar Produto</button>
+    <h1>Adicione os campos requisitados e confirme a atualização do produto</h1>
+    <div class="form-area">
+        <div class="form-area-align">
+            <input type="text" id="nomeUpdate" placeholder="Nome do produto">
+            
+            <input type="number" id="precoUpdate" placeholder="Preço unitário">
+            <input type="number" id="quantidadeUpdate" placeholder="Quantidade em estoque">
+        </div>
+        <div class="insersao_de_dados">
+            <button id="btnUpdate">Atualizar</button>
+        </div>
+    </div>
+</div>
+
+<div class="container section-margin">
+    <div class="linhas">
+        <div class="action-group">
+            <h2>Estoque</h2>
+            <button class="btn-secondary" id="btnListarEstoque">Listar Estoque</button>
+            <div id="estoque"></div> </div>
+        <div class="action-group">
+            <h2>Movimentações</h2>
+            <button class="btn-secondary" id="btnListarMov">Listar Movimentações</button>
+            <div id="movimentacoes"></div> </div>
+    </div>
+</div>
+
+<div class="container section-margin">
+    <h2>Registrar Venda</h2>
+    <div class="form-area">
+        <div class="form-area-align">
+            <input type="text" id="nomeVenda" placeholder="Nome do Produto">
+            <input type="number" id="quantidadeVenda" placeholder="Quantidade">
+            <button id="btnVenda">Registrar Venda</button>
+        </div>
+    </div>
+</div>
+
+<div id="mensagens" style="text-align: center; margin-top: 20px; font-weight: bold; color: dodgerblue;"></div>
 
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="./js/main.js"></script>
 </body>
 </html>

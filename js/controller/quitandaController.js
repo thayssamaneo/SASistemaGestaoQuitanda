@@ -1,6 +1,6 @@
 // importa as classes do model
-import { Produto } from "../model/produtoModel";
-import { QuitandaModel } from "../model/quitandaModel";
+import { Produto } from "../model/produtoModel.js";
+import { QuitandaModel } from "../model/quitandaModel.js";
 
 export class QuitandaController {
     // coloca o model e o view para poder realizar a integração
@@ -10,8 +10,8 @@ export class QuitandaController {
     }
 
     // criando um novo produto
-    handleAddProduto(id, nome, categoria, preco, quantidade){
-        const novoProduto = new Produto(id, nome, categoria, preco, quantidade);
+    handleAddProduto(nome, categoria, preco, quantidade){
+        const novoProduto = new Produto(nome, categoria, preco, quantidade);
         const resultado = this.model.addProduto(novoProduto);
         this.view.renderMensagem(resultado); // vai mostrar a mensagem de sucesso se for bem sucedido
     }

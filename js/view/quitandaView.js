@@ -2,6 +2,14 @@ export class QuitandaView {
   renderMensagem(msg) {
     const divMsg = document.getElementById("mensagens");
     divMsg.innerText = msg;
+    setTimeout(() => {
+      divMsg.innerText = "";
+    }, 3000);
+  }
+
+  limparFormularios() {
+    const todosInputs = document.querySelectorAll("input");
+    todosInputs.forEach((input) => (input.value = ""));
   }
 
   renderEstoque(estoque) {
@@ -10,7 +18,7 @@ export class QuitandaView {
 
     estoque.forEach((produto) => {
       const item = document.createElement("p");
-      item.textContent = `ID: ${produto.id} | Nome: ${produto.nome} | Categoria: ${produto.categoria} | Preço: R$${produto.preco} | Quantidade: ${produto.quantidade}`;
+      item.textContent = `Nome: ${produto.nome} | Categoria: ${produto.categoria} | Preço: R$${produto.preco} | Quantidade: ${produto.quantidade}`;
       divEstoque.appendChild(item);
     });
   }
@@ -26,3 +34,5 @@ export class QuitandaView {
     });
   }
 }
+
+
